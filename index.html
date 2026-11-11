@@ -1,0 +1,867 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | Muhammad Chairul Umam</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        /* ================= NAVBAR ================= */
+        nav {
+            background: #20235c;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #bfc5ff;
+        }
+
+        /* ================= SEARCH BAR ================= */
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 25px;
+            padding: 4px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 8px 12px;
+            width: 150px;
+            font-size: 14px;
+            border-radius: 25px;
+        }
+
+        .search-box button {
+            border: none;
+            background: #4b50b9;
+            color: white;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .search-box button:hover {
+            transform: scale(1.1);
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            min-height: 500px;
+            background: linear-gradient(135deg, #20235c, #4b50b9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .foto-profil {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: white;
+            color: #20235c;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ================= SECTION ================= */
+        section {
+            padding: 70px 10%;
+        }
+
+        .judul-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .judul-section h2 {
+            font-size: 30px;
+            color: #20235c;
+            margin-bottom: 10px;
+        }
+
+        .judul-section p {
+            color: #666;
+        }
+
+        /* ================= ABOUT ================= */
+        .about {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* ================= BIODATA ================= */
+        .biodata-container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .biodata-item {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+
+        .biodata-item:last-child {
+            border-bottom: none;
+        }
+
+        .biodata-label {
+            width: 150px;
+            font-weight: bold;
+            color: #20235c;
+        }
+
+        /* ================= HOBI ================= */
+        .hobi-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .hobi-card {
+            background: white;
+            width: 250px;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .hobi-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .hobi-card h3 {
+            color: #20235c;
+            margin-bottom: 10px;
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        /* ================= PROJECT ================= */
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            color: #20235c;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* ================= KOMENTAR ================= */
+        #komentar {
+            background: #eef0f7;
+        }
+
+        .komentar-container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .form-komentar {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .form-komentar input,
+        .form-komentar textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        .form-komentar textarea {
+            resize: vertical;
+        }
+
+        .form-komentar input:focus,
+        .form-komentar textarea:focus {
+            outline: none;
+            border-color: #4b50b9;
+        }
+
+        .form-komentar button {
+            background: #20235c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .form-komentar button:hover {
+            background: #4b50b9;
+            transform: translateY(-2px);
+        }
+
+        .hasil-komentar {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .hasil-komentar h3 {
+            color: #20235c;
+            margin-bottom: 20px;
+        }
+
+        .komentar-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+
+        .komentar-item:last-child {
+            border-bottom: none;
+        }
+
+        .komentar-item h4 {
+            color: #20235c;
+            margin-bottom: 8px;
+        }
+
+        .komentar-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .belum-ada {
+            color: #888;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* ================= KONTAK ================= */
+        .kontak {
+            text-align: center;
+            background: #20235c;
+            color: white;
+        }
+
+        .kontak h2 {
+            margin-bottom: 15px;
+        }
+
+        .kontak p {
+            margin: 8px;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: #15173f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 900px) {
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .search-box {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            section {
+                padding: 50px 7%;
+            }
+
+            .biodata-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .biodata-label {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <div class="logo">Portfolio Umam</div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Cari..."
+            >
+
+            <button onclick="searchWebsite()">🔍</button>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#biodata">Biodata</a></li>
+            <li><a href="#hobi">Hobi</a></li>
+            <li><a href="#project">Proyek</a></li>
+            <li><a href="#komentar">Komentar</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+
+        <div>
+
+            <img src="foto umam.jpeg"
+                 alt="Foto Muhammad Chairul Umam"
+                 class="foto-profil">
+
+            <h1>Muhammad Chairul Umam</h1>
+
+            <p>Mahasiswa | Teknologi | Komputer</p>
+
+            <a href="#about" class="btn">
+                Tentang Saya
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="judul-section">
+            <h2>Tentang Saya</h2>
+            <p>Perkenalan singkat mengenai diri saya</p>
+        </div>
+
+        <div class="about">
+
+            <p>
+                Saya adalah seorang mahasiswa Universitas Gunadarma yang memiliki
+                minat dalam bidang teknologi dan komputer. Saya senang mempelajari
+                hal-hal baru serta mengembangkan kemampuan dalam bidang teknologi,
+                pemrograman, dan sistem komputer.
+            </p>
+
+            <br>
+
+            <p>
+                Selain kegiatan akademik, saya juga memiliki beberapa hobi seperti
+                bermain gitar dan bermain basket. Saya percaya bahwa belajar dan
+                mengembangkan kemampuan diri merupakan proses yang harus terus
+                dilakukan.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BIODATA -->
+    <section id="biodata">
+
+        <div class="judul-section">
+            <h2>Biodata Diri</h2>
+            <p>Informasi singkat mengenai diri saya</p>
+        </div>
+
+        <div class="biodata-container">
+
+            <div class="biodata-item">
+                <div class="biodata-label">Nama</div>
+                <div>: Muhammad Chairul Umam</div>
+            </div>
+
+            <div class="biodata-item">
+                <div class="biodata-label">Umur</div>
+                <div>: 20 Tahun</div>
+            </div>
+
+            <div class="biodata-item">
+                <div class="biodata-label">Kelas</div>
+                <div>: 3KB05</div>
+            </div>
+
+            <div class="biodata-item">
+                <div class="biodata-label">NPM</div>
+                <div>: 20124818</div>
+            </div>
+
+            <div class="biodata-item">
+                <div class="biodata-label">Alamat</div>
+                <div>: Tangerang, Banten</div>
+            </div>
+
+            <div class="biodata-item">
+                <div class="biodata-label">Universitas</div>
+                <div>: Universitas Gunadarma</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOBI -->
+    <section id="hobi">
+
+        <div class="judul-section">
+            <h2>Hobi & Minat</h2>
+            <p>Beberapa kegiatan yang saya sukai</p>
+        </div>
+
+        <div class="hobi-container">
+
+            <div class="hobi-card">
+                <div class="icon">🎸</div>
+                <h3>Bermain Gitar</h3>
+                <p>
+                    Saya senang bermain gitar dan mempelajari berbagai jenis musik.
+                </p>
+            </div>
+
+            <div class="hobi-card">
+                <div class="icon">🏀</div>
+                <h3>Bermain Basket</h3>
+                <p>
+                    Basket merupakan salah satu olahraga yang saya sukai.
+                </p>
+            </div>
+
+            <div class="hobi-card">
+                <div class="icon">💻</div>
+                <h3>Teknologi</h3>
+                <p>
+                    Saya tertarik mempelajari komputer, teknologi, dan pemrograman.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECT -->
+    <section id="project">
+
+        <div class="judul-section">
+            <h2>Hasil Proyek Saya</h2>
+            <p>Beberapa proyek yang pernah saya kerjakan</p>
+        </div>
+
+        <div class="project-container">
+
+            <div class="project-card">
+
+                <img src="foto proyek 1.jpeg" alt="Proyek 1">
+
+                <div class="project-info">
+                    <h3>Proyek 1</h3>
+                    <p>
+                        Dokumentasi salah satu proyek yang telah saya kerjakan
+                        dalam bidang teknologi dan komputer.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <img src="foto proyek 2.jpeg" alt="Proyek 2">
+
+                <div class="project-info">
+                    <h3>Proyek 2</h3>
+                    <p>
+                        Dokumentasi proyek lainnya sebagai bagian dari proses
+                        pembelajaran dan pengembangan kemampuan saya.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-info"
+                     style="padding: 40px; text-align: center;">
+
+                    <div class="icon">🚀</div>
+
+                    <h3>Proyek Selanjutnya</h3>
+
+                    <p>
+                        Tempat untuk menambahkan proyek-proyek baru yang akan
+                        saya kerjakan di masa mendatang.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KOMENTAR -->
+    <section id="komentar">
+
+        <div class="judul-section">
+            <h2>Komentar Pengunjung</h2>
+            <p>Berikan komentar atau pesan untuk website saya</p>
+        </div>
+
+        <div class="komentar-container">
+
+            <!-- FORM -->
+            <div class="form-komentar">
+
+                <input
+                    type="text"
+                    id="namaKomentar"
+                    placeholder="Masukkan nama Anda"
+                >
+
+                <textarea
+                    id="isiKomentar"
+                    placeholder="Tulis komentar Anda di sini..."
+                    rows="5"
+                ></textarea>
+
+                <button onclick="kirimKomentar()">
+                    Kirim Komentar
+                </button>
+
+            </div>
+
+
+            <!-- HASIL KOMENTAR -->
+            <div class="hasil-komentar">
+
+                <h3>Hasil Komentar</h3>
+
+                <div id="daftarKomentar">
+
+                    <p class="belum-ada">
+                        Belum ada komentar. Jadilah yang pertama berkomentar!
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KONTAK -->
+    <section class="kontak" id="kontak">
+
+        <h2>Kontak Saya</h2>
+
+        <p>📍 Tangerang, Banten</p>
+        <p>📞 0812-9275-7077</p>
+        <p>✉️ muhammadchairulumam23@gmail.com</p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 Muhammad Chairul Umam | Personal Portfolio
+        </p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    
+<script>
+    // SEARCH WEBSITE
+    function searchWebsite() {
+        let input = document.getElementById("searchInput")
+            .value.toLowerCase().trim();
+
+        let halaman = {
+            "home": ["home", "beranda"],
+            "about": ["tentang", "about", "profil"],
+            "biodata": ["biodata", "nama", "npm", "umur", "kelas"],
+            "hobi": ["hobi", "gitar", "basket", "teknologi"],
+            "project": ["proyek", "project", "hasil"],
+            "komentar": ["komentar", "pesan"],
+            "kontak": ["kontak", "alamat", "tangerang"]
+        };
+
+        if (input === "") {
+            alert("Masukkan kata pencarian!");
+            return;
+        }
+
+        for (let bagian in halaman) {
+            if (halaman[bagian].some(kata => input.includes(kata))) {
+                document.getElementById(bagian)
+                    .scrollIntoView({ behavior: "smooth" });
+                return;
+            }
+        }
+
+        alert("Hasil pencarian tidak ditemukan!");
+    }
+
+    document.getElementById("searchInput")
+        .addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                searchWebsite();
+            }
+        });
+
+
+    // AMBIL KOMENTAR DARI LOCAL STORAGE
+    function tampilkanKomentar() {
+        let daftar = document.getElementById("daftarKomentar");
+
+        let komentar = JSON.parse(
+            localStorage.getItem("komentarUmam")
+        ) || [];
+
+        daftar.innerHTML = "";
+
+        if (komentar.length === 0) {
+            daftar.innerHTML =
+                '<p class="belum-ada">Belum ada komentar. Jadilah yang pertama!</p>';
+            return;
+        }
+
+        komentar.forEach(function(data) {
+            let item = document.createElement("div");
+            item.className = "komentar-item";
+
+            let nama = document.createElement("h4");
+            nama.textContent = data.nama;
+
+            let isi = document.createElement("p");
+            isi.textContent = data.isi;
+
+            item.appendChild(nama);
+            item.appendChild(isi);
+
+            daftar.appendChild(item);
+        });
+    }
+
+
+    // KIRIM KOMENTAR
+    function kirimKomentar() {
+        let nama = document.getElementById("namaKomentar")
+            .value.trim();
+
+        let isi = document.getElementById("isiKomentar")
+            .value.trim();
+
+        if (nama === "" || isi === "") {
+            alert("Nama dan komentar harus diisi!");
+            return;
+        }
+
+        let komentar = JSON.parse(
+            localStorage.getItem("komentarUmam")
+        ) || [];
+
+        komentar.unshift({
+            nama: nama,
+            isi: isi
+        });
+
+        localStorage.setItem(
+            "komentarUmam",
+            JSON.stringify(komentar)
+        );
+
+        document.getElementById("namaKomentar").value = "";
+        document.getElementById("isiKomentar").value = "";
+
+        tampilkanKomentar();
+
+        alert("Komentar berhasil disimpan!");
+    }
+
+    // TAMPILKAN KOMENTAR SAAT WEBSITE DIBUKA
+    tampilkanKomentar();
+
+    </script>
+
+</body>
+
+</html>
+```
