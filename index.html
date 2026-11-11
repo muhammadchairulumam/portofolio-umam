@@ -851,10 +851,6 @@
                 return;
             }
 
-            let komentar = JSON.parse(
-                localStorage.getItem("komentarUmam")
-            ) || [];
-
             komentar.unshift({
                 nama: nama,
                 isi: isi
@@ -870,7 +866,6 @@
 
             tampilkanKomentar();
 
-            alert("Komentar berhasil disimpan!");
         }
 
         // TAMPILKAN KOMENTAR SAAT WEBSITE DIBUKA
