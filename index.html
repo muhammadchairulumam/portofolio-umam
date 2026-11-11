@@ -162,9 +162,16 @@
         }
 
         /* ABOUT */
-        .about {
+        .about-container {
             max-width: 800px;
             margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .about {
             text-align: center;
             line-height: 1.8;
             font-size: 16px;
@@ -194,6 +201,39 @@
             width: 150px;
             font-weight: bold;
             color: #20235c;
+        }
+
+        /* SOCIAL MEDIA */
+        .social-container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-media a {
+            display: inline-block;
+            padding: 13px 30px;
+            background: #20235c;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .social-media a:hover {
+            background: #4b50b9;
+            transform: translateY(-4px);
         }
 
         /* HOBI */
@@ -375,30 +415,6 @@
             margin: 8px;
         }
 
-        /* SOCIAL MEDIA */
-        .social-media {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-media a {
-            display: inline-block;
-            padding: 13px 30px;
-            background: #20235c;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .social-media a:hover {
-            background: #4b50b9;
-            transform: translateY(-4px);
-        }
-
         /* IFRAME */
         .iframe-container {
             max-width: 900px;
@@ -501,11 +517,11 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">Tentang</a></li>
             <li><a href="#biodata">Biodata</a></li>
+            <li><a href="#social">Social Media</a></li>
             <li><a href="#hobi">Hobi</a></li>
             <li><a href="#project">Proyek</a></li>
             <li><a href="#komentar">Komentar</a></li>
             <li><a href="#kontak">Kontak</a></li>
-            <li><a href="#social">Social Media</a></li>
             <li><a href="#iframe">Iframe</a></li>
         </ul>
 
@@ -519,7 +535,7 @@
                  class="foto-profil">
 
             <h1>Muhammad Chairul Umam</h1>
-            <p>Mahasiswa | Gitaris | Jungler</p>
+            <p>Mahasiswa | Teknologi | Komputer</p>
 
             <a href="#about" class="btn">Tentang Saya</a>
         </div>
@@ -527,38 +543,44 @@
 
     <!-- ABOUT -->
     <section id="about">
+
         <div class="judul-section">
             <h2>Tentang Saya</h2>
             <p>Perkenalan singkat mengenai diri saya</p>
         </div>
 
-        <div class="about">
-            <p>
-                Saya adalah seorang mahasiswa Universitas Gunadarma yang memiliki
-                minat dalam bidang teknologi dan komputer. Saya senang mempelajari
-                hal-hal baru serta mengembangkan kemampuan dalam bidang teknologi,
-                pemrograman, dan sistem komputer.
-            </p>
+        <div class="about-container">
+            <div class="about">
+                <p>
+                    Saya adalah seorang mahasiswa Universitas Gunadarma yang memiliki
+                    minat dalam bidang teknologi dan komputer. Saya senang mempelajari
+                    hal-hal baru serta mengembangkan kemampuan dalam bidang teknologi,
+                    pemrograman, dan sistem komputer.
+                </p>
 
-            <br>
+                <br>
 
-            <p>
-                Selain kegiatan akademik, saya juga memiliki beberapa hobi seperti
-                bermain gitar dan bermain basket. Saya percaya bahwa belajar dan
-                mengembangkan kemampuan diri merupakan proses yang harus terus
-                dilakukan.
-            </p>
+                <p>
+                    Selain kegiatan akademik, saya juga memiliki beberapa hobi seperti
+                    bermain gitar dan bermain basket. Saya percaya bahwa belajar dan
+                    mengembangkan kemampuan diri merupakan proses yang harus terus
+                    dilakukan.
+                </p>
+            </div>
         </div>
+
     </section>
 
     <!-- BIODATA -->
     <section id="biodata">
+
         <div class="judul-section">
             <h2>Biodata Diri</h2>
             <p>Informasi singkat mengenai diri saya</p>
         </div>
 
         <div class="biodata-container">
+
             <div class="biodata-item">
                 <div class="biodata-label">Nama</div>
                 <div>: Muhammad Chairul Umam</div>
@@ -588,17 +610,50 @@
                 <div class="biodata-label">Universitas</div>
                 <div>: Universitas Gunadarma</div>
             </div>
+
         </div>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section id="social">
+
+        <div class="judul-section">
+            <h2>Social Media</h2>
+            <p>Temukan saya melalui media sosial</p>
+        </div>
+
+        <div class="social-container">
+
+            <div class="social-media">
+
+                <a href="https://www.instagram.com/umamcee/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    📸 Instagram
+                </a>
+
+                <a href="https://www.facebook.com/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    👍 Facebook
+                </a>
+
+            </div>
+
+        </div>
+
     </section>
 
     <!-- HOBI -->
     <section id="hobi">
+
         <div class="judul-section">
             <h2>Hobi & Minat</h2>
             <p>Beberapa kegiatan yang saya sukai</p>
         </div>
 
         <div class="hobi-container">
+
             <div class="hobi-card">
                 <div class="icon">🎸</div>
                 <h3>Bermain Gitar</h3>
@@ -616,17 +671,21 @@
                 <h3>Teknologi</h3>
                 <p>Saya tertarik mempelajari komputer, teknologi, dan pemrograman.</p>
             </div>
+
         </div>
+
     </section>
 
     <!-- PROJECT -->
     <section id="project">
+
         <div class="judul-section">
             <h2>Hasil Proyek Saya</h2>
             <p>Beberapa proyek yang pernah saya kerjakan</p>
         </div>
 
         <div class="project-container">
+
             <div class="project-card">
                 <img src="foto proyek 1.jpeg" alt="Proyek 1">
 
@@ -661,19 +720,25 @@
                     </p>
                 </div>
             </div>
+
         </div>
+
     </section>
 
     <!-- KOMENTAR -->
     <section id="komentar">
+
         <div class="judul-section">
             <h2>Komentar Pengunjung</h2>
             <p>Berikan komentar atau pesan untuk website saya</p>
         </div>
 
         <div class="komentar-container">
+
             <div class="form-komentar">
-                <input type="text" id="namaKomentar"
+
+                <input type="text"
+                       id="namaKomentar"
                        placeholder="Masukkan nama Anda">
 
                 <textarea id="isiKomentar"
@@ -683,9 +748,11 @@
                 <button onclick="kirimKomentar()">
                     Kirim Komentar
                 </button>
+
             </div>
 
             <div class="hasil-komentar">
+
                 <h3>Hasil Komentar</h3>
 
                 <div id="daftarKomentar">
@@ -693,48 +760,33 @@
                         Belum ada komentar. Jadilah yang pertama berkomentar!
                     </p>
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
     <!-- KONTAK -->
     <section class="kontak" id="kontak">
+
         <h2>Kontak Saya</h2>
         <p>📍 Tangerang, Banten</p>
         <p>📞 0812-9275-7077</p>
         <p>✉️ muhammadchairulumam23@gmail.com</p>
-    </section>
 
-    <!-- SOCIAL MEDIA -->
-    <section id="social">
-        <div class="judul-section">
-            <h2>Social Media</h2>
-            <p>Temukan saya melalui media sosial</p>
-        </div>
-
-        <div class="social-media">
-            <a href="https://www.instagram.com/umamcee/"
-               target="_blank"
-               rel="noopener noreferrer">
-                📸 Instagram
-            </a>
-
-            <a href="https://www.facebook.com/"
-               target="_blank"
-               rel="noopener noreferrer">
-                👍 Facebook
-            </a>
-        </div>
     </section>
 
     <!-- IFRAME -->
     <section id="iframe">
+
         <div class="judul-section">
             <h2>Media & Informasi</h2>
             <p>Konten tambahan yang ditampilkan melalui iframe</p>
         </div>
 
         <div class="iframe-container">
+
             <h3>Google Maps - Tangerang</h3>
 
             <iframe
@@ -743,115 +795,127 @@
                 loading="lazy"
                 allowfullscreen>
             </iframe>
+
         </div>
 
         <div class="iframe-container">
-            <h3>Favorite Song</h3>
+
+            <h3>Favorite Song - The Adams</h3>
 
             <iframe
                 src="https://www.youtube.com/embed/hDo9EIEs36M"
-                title="Hanya Kau - The Adams"
+                title="Favorite Song - The Adams"
                 loading="lazy"
                 allowfullscreen>
             </iframe>
+
         </div>
+
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Muhammad Chairul Umam | Universitas Gunadarma</p>
+        <p>© 2026 Muhammad Chairul Umam | Personal Portfolio</p>
     </footer>
 
     <!-- JAVASCRIPT -->
     <script>
 
         // SEARCH WEBSITE
-       
-// SEARCH WEBSITE
-function searchWebsite() {
-    let input = document.getElementById("searchInput")
-        .value.toLowerCase().trim();
+        function searchWebsite() {
 
-    let halaman = {
-        "home": ["home", "beranda"],
-        "about": ["tentang", "about", "profil"],
-        "biodata": ["biodata", "nama", "npm", "umur", "kelas"],
-        "hobi": ["hobi", "gitar", "basket", "teknologi"],
-        "project": ["proyek", "project", "hasil"],
-        "komentar": ["komentar", "pesan"],
-        "kontak": ["kontak", "alamat", "tangerang"],
-        "social": ["social", "instagram", "facebook"],
-        "iframe": ["iframe", "maps", "youtube", "video"]
-    };
+            let input = document.getElementById("searchInput")
+                .value.toLowerCase().trim();
 
-    if (input === "") {
-        alert("Masukkan kata pencarian!");
-        return;
-    }
+            let halaman = {
+                "home": ["home", "beranda"],
+                "about": ["tentang", "about", "profil"],
+                "biodata": ["biodata", "nama", "npm", "umur", "kelas"],
+                "hobi": ["hobi", "gitar", "basket", "teknologi"],
+                "project": ["proyek", "project", "hasil"],
+                "komentar": ["komentar", "pesan"],
+                "kontak": ["kontak", "alamat", "tangerang"],
+                "social": ["social", "instagram", "facebook"],
+                "iframe": ["iframe", "maps", "youtube", "video"]
+            };
 
-    for (let bagian in halaman) {
-        if (halaman[bagian].some(kata => input.includes(kata))) {
-            document.getElementById(bagian)
-                .scrollIntoView({ behavior: "smooth" });
-            return;
+            if (input === "") {
+                alert("Masukkan kata pencarian!");
+                return;
+            }
+
+            for (let bagian in halaman) {
+
+                if (halaman[bagian].some(kata => input.includes(kata))) {
+
+                    document.getElementById(bagian)
+                        .scrollIntoView({ behavior: "smooth" });
+
+                    return;
+                }
+            }
+
+            alert("Hasil pencarian tidak ditemukan!");
         }
-    }
 
-    alert("Hasil pencarian tidak ditemukan!");
-}
 
-document.getElementById("searchInput")
-    .addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            searchWebsite();
+        // ENTER UNTUK PENCARIAN
+        document.getElementById("searchInput")
+            .addEventListener("keypress", function(event) {
+
+                if (event.key === "Enter") {
+                    searchWebsite();
+                }
+
+            });
+
+
+        // KIRIM KOMENTAR TANPA LOCAL STORAGE
+        function kirimKomentar() {
+
+            let nama = document.getElementById("namaKomentar")
+                .value.trim();
+
+            let isi = document.getElementById("isiKomentar")
+                .value.trim();
+
+            if (nama === "" || isi === "") {
+                alert("Nama dan komentar harus diisi!");
+                return;
+            }
+
+            let daftar = document.getElementById("daftarKomentar");
+
+            // Hapus pesan belum ada komentar
+            let pesan = daftar.querySelector(".belum-ada");
+
+            if (pesan) {
+                pesan.remove();
+            }
+
+            // Buat elemen komentar
+            let item = document.createElement("div");
+            item.className = "komentar-item";
+
+            let namaPengunjung = document.createElement("h4");
+            namaPengunjung.textContent = nama;
+
+            let komentar = document.createElement("p");
+            komentar.textContent = isi;
+
+            item.appendChild(namaPengunjung);
+            item.appendChild(komentar);
+
+            // Tampilkan komentar terbaru di atas
+            daftar.prepend(item);
+
+            // Kosongkan form
+            document.getElementById("namaKomentar").value = "";
+            document.getElementById("isiKomentar").value = "";
+
+            alert("Komentar berhasil ditampilkan!");
+
         }
-    });
-
-
-// KIRIM KOMENTAR TANPA LOCAL STORAGE
-function kirimKomentar() {
-    let nama = document.getElementById("namaKomentar")
-        .value.trim();
-
-    let isi = document.getElementById("isiKomentar")
-        .value.trim();
-
-    if (nama === "" || isi === "") {
-        alert("Nama dan komentar harus diisi!");
-        return;
-    }
-
-    let daftar = document.getElementById("daftarKomentar");
-
-    // Hapus pesan belum ada komentar
-    let pesan = daftar.querySelector(".belum-ada");
-
-    if (pesan) {
-        pesan.remove();
-    }
-
-    // Buat elemen komentar
-    let item = document.createElement("div");
-    item.className = "komentar-item";
-
-    let namaPengunjung = document.createElement("h4");
-    namaPengunjung.textContent = nama;
-
-    let komentar = document.createElement("p");
-    komentar.textContent = isi;
-
-    item.appendChild(namaPengunjung);
-    item.appendChild(komentar);
-
-    // Tampilkan komentar terbaru di atas
-    daftar.prepend(item);
-
-    // Kosongkan form
-    document.getElementById("namaKomentar").value = "";
-    document.getElementById("isiKomentar").value = "";
-
-    alert("Komentar berhasil ditampilkan!");
-}
 
     </script>
 
