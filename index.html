@@ -766,115 +766,92 @@
     <script>
 
         // SEARCH WEBSITE
-        function searchWebsite() {
-            let input = document.getElementById("searchInput")
-                .value.toLowerCase().trim();
+       
+// SEARCH WEBSITE
+function searchWebsite() {
+    let input = document.getElementById("searchInput")
+        .value.toLowerCase().trim();
 
-            let halaman = {
-                "home": ["home", "beranda"],
-                "about": ["tentang", "about", "profil"],
-                "biodata": ["biodata", "nama", "npm", "umur", "kelas"],
-                "hobi": ["hobi", "gitar", "basket", "teknologi"],
-                "project": ["proyek", "project", "hasil"],
-                "komentar": ["komentar", "pesan"],
-                "kontak": ["kontak", "alamat", "tangerang"],
-                "social": ["social", "instagram", "facebook"],
-                "iframe": ["iframe", "maps", "youtube", "video"]
-            };
+    let halaman = {
+        "home": ["home", "beranda"],
+        "about": ["tentang", "about", "profil"],
+        "biodata": ["biodata", "nama", "npm", "umur", "kelas"],
+        "hobi": ["hobi", "gitar", "basket", "teknologi"],
+        "project": ["proyek", "project", "hasil"],
+        "komentar": ["komentar", "pesan"],
+        "kontak": ["kontak", "alamat", "tangerang"],
+        "social": ["social", "instagram", "facebook"],
+        "iframe": ["iframe", "maps", "youtube", "video"]
+    };
 
-            if (input === "") {
-                alert("Masukkan kata pencarian!");
-                return;
-            }
+    if (input === "") {
+        alert("Masukkan kata pencarian!");
+        return;
+    }
 
-            for (let bagian in halaman) {
-                if (halaman[bagian].some(kata => input.includes(kata))) {
-                    document.getElementById(bagian)
-                        .scrollIntoView({ behavior: "smooth" });
-                    return;
-                }
-            }
-
-            alert("Hasil pencarian tidak ditemukan!");
+    for (let bagian in halaman) {
+        if (halaman[bagian].some(kata => input.includes(kata))) {
+            document.getElementById(bagian)
+                .scrollIntoView({ behavior: "smooth" });
+            return;
         }
+    }
 
-        document.getElementById("searchInput")
-            .addEventListener("keypress", function(event) {
-                if (event.key === "Enter") {
-                    searchWebsite();
-                }
-            });
+    alert("Hasil pencarian tidak ditemukan!");
+}
 
-        // AMBIL KOMENTAR DARI LOCAL STORAGE
-        function tampilkanKomentar() {
-            let daftar = document.getElementById("daftarKomentar");
-
-            let komentar = JSON.parse(
-                localStorage.getItem("komentarUmam")
-            ) || [];
-
-            daftar.innerHTML = "";
-
-            if (komentar.length === 0) {
-                daftar.innerHTML =
-                    '<p class="belum-ada">Belum ada komentar. Jadilah yang pertama!</p>';
-                return;
-            }
-
-            komentar.forEach(function(data) {
-                let item = document.createElement("div");
-                item.className = "komentar-item";
-
-                let nama = document.createElement("h4");
-                nama.textContent = data.nama;
-
-                let isi = document.createElement("p");
-                isi.textContent = data.isi;
-
-                item.appendChild(nama);
-                item.appendChild(isi);
-
-                daftar.appendChild(item);
-            });
+document.getElementById("searchInput")
+    .addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            searchWebsite();
         }
+    });
 
-        // KIRIM KOMENTAR
-        function kirimKomentar() {
-            let nama = document.getElementById("namaKomentar")
-                .value.trim();
 
-            let isi = document.getElementById("isiKomentar")
-                .value.trim();
+// KIRIM KOMENTAR TANPA LOCAL STORAGE
+function kirimKomentar() {
+    let nama = document.getElementById("namaKomentar")
+        .value.trim();
 
-            if (nama === "" || isi === "") {
-                alert("Nama dan komentar harus diisi!");
-                return;
-            }
+    let isi = document.getElementById("isiKomentar")
+        .value.trim();
 
-            let komentar = JSON.parse(
-                localStorage.getItem("komentarUmam")
-            ) || [];
+    if (nama === "" || isi === "") {
+        alert("Nama dan komentar harus diisi!");
+        return;
+    }
 
-            komentar.unshift({
-                nama: nama,
-                isi: isi
-            });
+    let daftar = document.getElementById("daftarKomentar");
 
-            localStorage.setItem(
-                "komentarUmam",
-                JSON.stringify(komentar)
-            );
+    // Hapus pesan belum ada komentar
+    let pesan = daftar.querySelector(".belum-ada");
 
-            document.getElementById("namaKomentar").value = "";
-            document.getElementById("isiKomentar").value = "";
+    if (pesan) {
+        pesan.remove();
+    }
 
-            tampilkanKomentar();
+    // Buat elemen komentar
+    let item = document.createElement("div");
+    item.className = "komentar-item";
 
-            alert("Komentar berhasil disimpan!");
-        }
+    let namaPengunjung = document.createElement("h4");
+    namaPengunjung.textContent = nama;
 
-        // TAMPILKAN KOMENTAR SAAT WEBSITE DIBUKA
-        tampilkanKomentar();
+    let komentar = document.createElement("p");
+    komentar.textContent = isi;
+
+    item.appendChild(namaPengunjung);
+    item.appendChild(komentar);
+
+    // Tampilkan komentar terbaru di atas
+    daftar.prepend(item);
+
+    // Kosongkan form
+    document.getElementById("namaKomentar").value = "";
+    document.getElementById("isiKomentar").value = "";
+
+    alert("Komentar berhasil ditampilkan!");
+}
 
     </script>
 
